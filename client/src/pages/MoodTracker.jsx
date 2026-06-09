@@ -11,7 +11,7 @@ function MoodTracker(){
  const handleSave = async () => {
   try {
     const userId = localStorage.getItem('userId') || 'test-user'
-    await axios.post('http://localhost:5000/api/mood', {
+    await axios.post('https://healthmind-backend.onrender.com/api/mood', {
       userId, energy, mood, date, note
     })
     alert('Mood got saved!😴')
@@ -25,7 +25,7 @@ const fetchLogs = async () => {
   // get userId from localStorage
   try{
     const userId= localStorage.getItem('userId') || 'test-user'
-    const response= await axios.get( `http://localhost:5000/api/mood/${userId}`)
+    const response= await axios.get( `https://healthmind-backend.onrender.com/api/mood/${userId}`)
     setLogs(response.data)
   }
   

@@ -8,7 +8,7 @@ const [result, setResult] = useState('')
 const handleAnalyze = async () => {
   console.log('button clicked!', symptoms)  // add this line
     try {
-      const response = await axios.post('http://localhost:5000/api/ai/symptom-checker', {
+      const response = await axios.post('https://healthmind-backend.onrender.com/api/ai/symptom-checker', {
         symptoms
       })
       setResult(response.data.result)

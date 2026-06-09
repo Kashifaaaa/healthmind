@@ -9,7 +9,7 @@ function SleepLogger(){
    const handleSave = async () => {
   try {
     const userId = localStorage.getItem('userId') || 'test-user'
-    await axios.post('http://localhost:5000/api/sleep', {
+    await axios.post('https://healthmind-backend.onrender.com/api/sleep', {
       userId,
       hours,
       date
@@ -24,7 +24,7 @@ function SleepLogger(){
   try {
     const userId = localStorage.getItem('userId') || 'test-user'
     const response = await axios.get(
-      `http://localhost:5000/api/sleep/${userId}`
+      `https://healthmind-backend.onrender.com/api/sleep/${userId}`
     )
     setLogs(response.data)
   } catch (error) {

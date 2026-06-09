@@ -9,7 +9,7 @@ function Signup() {
     const navigate = useNavigate();
     const handleSignup= async() => {
       try{
-        const response= await axios.post('http://localhost:5000/api/auth/signup',{
+        const response= await axios.post('https://healthmind-backend.onrender.com/api/auth/signup',{
           name,
           email, 
           password
