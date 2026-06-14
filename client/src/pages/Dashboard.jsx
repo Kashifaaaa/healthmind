@@ -95,11 +95,13 @@ function Dashboard() {
             </div>
             <span className="text-3xl">😴</span>
           </div>
-          <ResponsiveContainer width="100%" height={250}>
+          <ResponsiveContainer width="100%" height={280}>
             <LineChart data={sleepData.map(log => ({
               date: new Date(log.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
               hours: Number(log.hours)
-            }))}>
+            }))}
+            margin={{ top: 10, right: 10, left: 0, bottom: 60 }}
+            >
               <defs>
                 <linearGradient id="sleepGradient" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
@@ -107,7 +109,16 @@ function Dashboard() {
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis dataKey="date" tick={{ fontSize: 12, fill: '#9ca3af' }} axisLine={false} tickLine={false} />
+              <XAxis 
+                  dataKey="date" 
+                  tick={{ fontSize: 11, fill: '#9ca3af' }} 
+                  axisLine={false} 
+                  tickLine={false}
+                  interval={0}
+                  angle={-45}
+                  textAnchor="end"
+                  height={50}
+                 />
               <YAxis tick={{ fontSize: 12, fill: '#9ca3af' }} axisLine={false} tickLine={false} domain={[0, 12]} />
               <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
               <Line type="monotone" dataKey="hours" stroke="#3b82f6" strokeWidth={3} dot={{ fill: '#3b82f6', r: 5 }} activeDot={{ r: 7 }} />
@@ -124,12 +135,17 @@ function Dashboard() {
             </div>
             <span className="text-3xl">⚡</span>
           </div>
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={moodData.map(log => ({
-              date: new Date(log.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
-              energy: Number(log.energy),
-              mood: log.mood
-            }))}>
+          <ResponsiveContainer width="100%" height={400}>
+           <BarChart 
+                  data={moodData.map(log => ({
+                    date: new Date(log.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+                    energy: Number(log.energy),
+                    mood: log.mood
+                  }))}
+                  margin={{ top: 20, right: 30, left: 0, bottom: 60 }}
+                  barSize={40}
+                  barCategoryGap="30%"
+>
               <defs>
                 <linearGradient id="moodGradient" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.9} />
@@ -137,8 +153,17 @@ function Dashboard() {
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis dataKey="date" tick={{ fontSize: 12, fill: '#9ca3af' }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 12, fill: '#9ca3af' }} axisLine={false} tickLine={false} domain={[0, 10]} />
+             <XAxis 
+                  dataKey="date" 
+                  tick={{ fontSize: 11, fill: '#9ca3af' }} 
+                  axisLine={false} 
+                  tickLine={false}
+                  interval={0}
+                  angle={-45}
+                  textAnchor="end"
+                  height={50}
+              />
+              <YAxis tick={{ fontSize: 12, fill: '#9ca3af' }} axisLine={false} tickLine={false} domain={[0, 11]} />
               <Tooltip
                 contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}
                 formatter={(value, name, props) => [value, `Energy (Mood: ${props.payload.mood})`]}
