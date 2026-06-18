@@ -81,6 +81,13 @@ function Dashboard() {
           <h3 className="text-xl font-bold mt-2 text-gray-800">Medication Reminder</h3>
           <p className="text-gray-400 mt-1 text-sm">Never miss your medicines again</p>
         </div>
+        <div
+          onClick={() => navigate('/ai-chat')}
+          className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:border-blue-200 transition-all">
+          <h2 className="text-4xl">🤖</h2>
+          <h3 className="text-xl font-bold mt-2 text-gray-800">AI Health Chat</h3>
+          <p className="text-gray-400 mt-1 text-sm">Chat with your personal AI health assistant</p>
+        </div>
       </div>
 
       {/* Charts Section */}

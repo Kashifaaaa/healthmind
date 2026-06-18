@@ -25,4 +25,28 @@ res.json({ result: completion.choices[0].message.content })
   }
 })
 
+router.post('/chat', async (req, res) => {
+  try {
+    const { messages } = req.body
+
+    const completion = await client.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      max_tokens: 1024,
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a helpful health assistant. Give helpful, caring health advice. Always remind users to consult a doctor for serious concerns.'
+        },
+        ...messages
+      ]
+    })
+
+    res.json({ reply: completion.choices[0].message.content })
+
+  } catch (error) {
+    console.log('Chat error:', error.message)
+    res.status(500).json({ message: 'Server error' })
+  }
+})
+
 module.exports = router

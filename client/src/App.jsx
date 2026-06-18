@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard'
 import SymptomChecker from './pages/SymptomChecker'
 import SleepLogger from './pages/SleepLogger'
 import MoodTracker from './pages/MoodTracker'
+import AIChat from './pages/AIchat'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/symptom-checker" element={<SymptomChecker/>}/>
         <Route path="/sleep-logger" element={<SleepLogger/>}/>
         <Route path="/mood-tracker" element={<MoodTracker/>}/>
+        <Route path="/ai-chat" element={<AIChat/>}/>
       </Routes>
     </BrowserRouter>
   )

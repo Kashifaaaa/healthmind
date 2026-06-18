@@ -72,7 +72,7 @@ function Signup() {
                 type="password"
                 className="rounded w-64 border "
                 />
-                <button onClick={handleSignup} className="bg-blue-700 rounded w-32 text-white font-bold mx-auto block mt-4">Sign up</button>
+                <button onClick={handleSignup} className="bg-blue-700 rounded w-32 text-white font-bold mx-auto block mt-4 cursor-pointer">Sign up</button>
                 <p className="text-gray-500 mx-auto block m-2"> Already have an account?
                     <span onClick={() => navigate('/login')}
                      className="text-blue-700 font-bold cursor-pointer"> Login 

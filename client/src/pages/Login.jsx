@@ -45,7 +45,7 @@ function Login() {
             placeholder="Enter the password"
             className="border p-2 rounded w-full"
             />
-            <button onClick={handleLogin} className="rounded w-32 bg-blue-800 p-2 px-4 py-2 mx-auto block font-bold text-white ">Login </button>
+            <button onClick={handleLogin} className="rounded w-32 bg-blue-800 p-2 px-4 py-2 mx-auto block font-bold text-white cursor-pointer">Login </button>
             <p className="text-gray-500 text-center">Don't have an account?
                 <span className="text-blue-700 font-bold cursor-pointer"
                 onClick={() => navigate('/signup')} 
