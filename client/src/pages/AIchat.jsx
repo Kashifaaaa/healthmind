@@ -82,6 +82,7 @@ return (
         className="flex-1 border rounded-xl px-4 py-3 focus:outline-none focus:border-blue-400"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
+        onKeyPress={(e) => e.key === 'Enter' && handleSend()}
       />
       <button
       onClick={handleSend}
