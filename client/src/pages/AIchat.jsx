@@ -56,7 +56,12 @@ return (
               ? 'bg-blue-600 text-white rounded-br-none' 
               : 'bg-white text-gray-800 shadow-sm rounded-bl-none'
           }`}>
-            <p className="text-sm">{msg.content}</p>
+            <p className="text-sm whitespace-pre-wrap">
+        {msg.content
+          .replace(/\*\*(.*?)\*\*/g, '$1')  // remove **bold**
+          .replace(/^\* /gm, '• ')          // * → bullet point •
+        }
+        </p>
           </div>
         </div>
       ))}
