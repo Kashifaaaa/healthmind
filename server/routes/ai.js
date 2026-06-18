@@ -35,8 +35,13 @@ router.post('/chat', async (req, res) => {
       messages: [
         {
           role: 'system',
-          content: 'You are a helpful health assistant. Give helpful, caring health advice. Always remind users to consult a doctor for serious concerns.'
-        },
+          content: `You are a caring health assistant having a conversation. 
+              Keep responses SHORT (2-3 sentences max). 
+              Ask ONE follow-up question at a time to understand the user better. 
+              Gather information gradually like a real doctor would. 
+              Only give full advice after asking enough questions.
+              Always remind users to consult a real doctor for serious concerns.`
+                      },
         ...messages
       ]
     })
